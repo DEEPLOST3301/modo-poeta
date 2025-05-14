@@ -193,7 +193,7 @@ document.getElementById("carregarBtn").addEventListener("click", () => {
 });
 
 document.getElementById("exportarBtn").addEventListener("click", () => {
-  const {{ jsPDF }} = window.jspdf;
+const jsPDF = window.jspdf.jsPDF;
   const doc = new jsPDF();
   doc.setFont("times", "normal");
   doc.text(document.getElementById("poema").value, 10, 10);
