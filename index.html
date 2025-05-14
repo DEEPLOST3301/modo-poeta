@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modo Poeta</title>
+  <link rel="manifest" href="manifest.json">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background-color: #121212;
+      color: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      max-width: 800px;
+      width: 100%;
+      padding: 20px;
+      background-color: #1e1e1e;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    textarea {
+      width: 100%;
+      height: 200px;
+      background: #2b2b2b;
+      color: #f2f2f2;
+      border: none;
+      border-radius: 8px;
+      padding: 15px;
+      font-size: 16px;
+      resize: none;
+      box-shadow: inset 0 0 5px rgba(0,0,0,0.3);
+    }
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 15px;
+    }
+    button {
+      background-color: #4a90e2;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      flex: 1 1 45%;
+    }
+    button:hover {
+      background-color: #357abd;
+    }
+    #sugestoes, #temporizador, #salvo, #poemasSalvos, #inspiracoes {
+      margin-top: 20px;
+      padding: 10px;
+      background: #2d2d2d;
+      border-radius: 8px;
+    }
+    select, option {
+      background: #1e1e1e;
+      color: #f2f2f2;
+      border: 1px solid #4a90e2;
+      padding: 5px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>📝 Modo Poeta</h1>
+    <textarea id="poema" placeholder="Escreva seus versos aqui..."></textarea>
+    <div class="controls">
+      <button id="sugestoesBtn">Ver Sugestões de Rima</button>
+      <button id="temporizadorBtn">Ativar Temporizador</button>
+      <button id="salvarBtn">Salvar Poema</button>
+      <button id="carregarBtn">Carregar Último</button>
+      <button id="exportarBtn">Exportar como PDF</button>
+      <button id="temaBtn">Alternar Tema</button>
+    </div>
+    <div id="inspiracoes">
+      <strong>🌟 Modo Inspiração:</strong><br>
+      <label for="temaInsp">Escolha um tema:</label>
+      <select id="temaInsp">
+        <option value="romance">Romance</option>
+        <option value="fé">Fé</option>
+        <option value="tristeza">Tristeza</option>
+        <option value="reflexao">Reflexão</option>
+        <option value="esperanca">Esperança</option>
+      </select>
+      <button id="inspirarBtn">Buscar Inspiração</button>
+      <div id="frasesInspiradas"></div>
+    </div>
+    <div id="sugestoes"></div>
+    <div id="temporizador"></div>
+    <div id="salvo"></div>
+    <div id="poemasSalvos"></div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
